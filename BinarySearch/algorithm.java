@@ -1,0 +1,30 @@
+package BinarySearch;
+
+public class algorithm {
+    public static int binarysearch(int arr[],int target)
+    {
+        int n=arr.length;
+        int start=0;
+        int end=n-1;
+        while(start<=end)
+        {
+            int mid=start+(end-start)/2;
+            if(arr[mid]==target)
+            {
+                return mid;
+            }
+            else if(target>arr[mid])
+            {
+                start=mid+1;
+            }
+            else
+                end=mid-1;
+        }
+        return -1; // if the element is not present in the array
+    }
+    public static void main(String[] args) {
+        int arr[]={1,2,3,4,5,6,7,8,9,10};
+        int target=11;
+        System.out.println(binarysearch(arr, target));
+    }
+}
